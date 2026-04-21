@@ -1,0 +1,33 @@
+# Codemagic CI/CD configuration
+
+workflows:
+  ios_build:
+    name: iOS Build
+    environment:
+      flutter: "2.0.x"
+    scripts:
+      - name: Install dependencies
+        script: "flutter pub get"
+      - name: Run tests
+        script: "flutter test"
+      - name: Build iOS
+        script: "flutter build ios --release"
+
+  android_build:
+    name: Android Build
+    environment:
+      flutter: "2.0.x"
+    scripts:
+      - name: Install dependencies
+        script: "flutter pub get"
+      - name: Run tests
+        script: "flutter test"
+      - name: Build Android
+        script: "flutter build apk --release"
+
+# Trigger builds on pull requests and pushes to main branch
+triggers:
+  on: [pull_request, push]
+  branches:
+    only:
+      - main
