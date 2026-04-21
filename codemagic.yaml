@@ -3,22 +3,11 @@ workflows:
     name: Android Build
     instance_type: linux_x2
     
-    environment:
-      android_home: /opt/android-sdk-linux
-      java_home: /opt/jdk
-      java_version: 11
-    
     scripts:
       - name: Build APK
         script: |
-          cd app
-          chmod +x ../gradlew
-          ../gradlew assembleDebug
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
     
     artifacts:
       - app/build/outputs/apk/debug/**/*.apk
-    
-    publishing:
-      email:
-        recipients:
-          - heripiporker@gmail.com
