@@ -1,0 +1,2 @@
+// Include a placeholder project. This is a basic settings.gradle file for Android projects.
+include ':app'
