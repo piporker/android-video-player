@@ -1,0 +1,21 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.4"  // Use your desired version
+    }
+}
+
+// This is the main project configuration
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Tasks and configurations can go here
